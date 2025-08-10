@@ -25,17 +25,20 @@ The project includes a home page, a shop page, a collection page and sign-in/sig
 ## 📂 Project Structure
 Netflix-Project/
 │
-├── home.html # Main landing page
-  screans/
-  │
-  ├── shop.html # Shop page
-  ├── collection.html # Collection page
-  ├── signin.html # Sign-in screen
-  ├── signup.html # Sign-up screen
+├── home.html              # Main landing page
 │
-├── css/ # Custom stylesheets
-├── js/ # Custom JavaScript files
-└── img & video/ # Images and video assets
+├── screens/               # Website screens/pages
+│   ├── shop.html          # Shop page
+│   ├── collection.html    # Collection page
+│   ├── signin.html        # Sign-in screen
+│   ├── signup.html        # Sign-up screen
+│
+├── css/                   # Custom stylesheets
+│
+├── js/                    # Custom JavaScript files
+│
+└── img & video/           # Images and video assets
+
 
 ## 🚀 Getting Started
 1. **Clone this repository**
