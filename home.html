@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix | Home</title>
+  <link rel="icon" type="image/x-icon" href="./img & video/icon.png">
+  <link rel="stylesheet" href="./css/bootstrap.css">
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    #nav .navbar-nav .nav-item .nav-link:hover {
+      color: #9b0606 !important;
+    }
+
+    #nav img {
+      transition: all 0.3s ease-in-out;
+
+
+    }
+
+    #nav .navbar-brand:hover img {
+      transform: scaleY(2);
+      transition: .3s;
+    }
+
+    #bell:hover,
+    #search:hover,
+    #user:hover {
+      transform: scale(1.5);
+      transition: .1s;
+    }
+
+    .dropdown-menu {
+      --bs-dropdown-link-active-bg: #9b0606;
+      --bs-dropdown-link-hover-bg: #383737;
+    }
+
+    body {
+      background-color: black;
+    }
+
+    #nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .bg-opacity {
+      background-image: linear-gradient(to top, rgba(255, 0, 0, 0), rgb(1, 4, 9));
+      transition: 1s;
+    }
+
+    .bg-blaack {
+      background-color: black;
+      transition: 1s;
+    }
+
+    header {
+      margin-bottom: 20vh;
+    }
+
+    .head div:nth-child(1) {
+      margin-top: 400px;
+      margin-bottom: 1px;
+      letter-spacing: 5px;
+      color: white;
+    }
+
+    .head h1 {
+      font-size: 40px;
+      color: rgb(252, 219, 29);
+      letter-spacing: 10px;
+      transform: scaleY(2);
+
+    }
+
+    .head p {
+      color: rgb(252, 219, 29);
+      font-size: 20px;
+    }
+
+    #background-video {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      display: block;
+      margin: 0 auto;
+      /* center inside the column */
+    }
+
+    .carousel-item .col {
+      padding: 0 !important;
+    }
+
+    /* #multiImageCarousel{
+      margin-top: 100vh;
+    } */
+
+
+    .carousel-item .col {
+      padding: 5px;
+    }
+
+    .mydetail>* {
+      padding-right: 4px;
+      padding-left: 4px;
+    }
+
+    .movie-wrapper {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      background-color: #141414;
+      transition: transform 0.3s ease;
+    }
+
+    .movie-img {
+      width: 100%;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .movie-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(20, 20, 20, 0.9);
+      padding: 10px;
+      opacity: 0;
+      transform: translateY(100%) scale(0.95);
+      transition: all 0.3s ease;
+    }
+
+    .movie-card:hover .movie-wrapper {
+      transform: scale(1.05);
+    }
+
+    .movie-card:hover .movie-img {
+      transform: scale(1.08);
+    }
+
+    .movie-card:hover .movie-info {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    footer {
+      margin-top: 200px;
+      margin-bottom: 100px;
+      color: rgba(255, 255, 255, 0.425);
+
+    }
+
+    footer h4 {
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    footer h4:hover {
+      color: #9b0606;
+      transition: .3s;
+    }
+  </style>
+</head>
+
+<body onscroll="navScroll()">
+
+  <!-- --------------------------NavBar--------------------------- -->
+
+  <nav id="nav" class="navbar navbar-expand-lg bg-opacity">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="./img & video/netflix_logo.png" alt="Logo" width="100" height="64"
+          class="d-inline-block align-text-top">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span><img class="navbar-toggler-icon" src="./img & video/icon/menu.png" alt=""></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-white" style="opacity: 0.7;" href="#">Movies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" style="opacity: 0.7;" href="#">Series</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" style="opacity: 0.7;" href="#">TV Shows</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" style="opacity: 0.7;" href="#">News & Populer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" style="opacity: 0.7;" href="#">My List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" style="opacity: 0.7;" href="./screens/shop.html">Shop</a>
+          </li>
+        </ul>
+
+      </div>
+
+
+      <ul class="dropdown-menu bg-dark" style="left: 75%;">
+        <li><a class="dropdown-item text-white" href="./screens/sign_in.html">Confirm</a></li>
+        <li><a class="dropdown-item text-white" href="./screens/sign_up.html">Log Off <img
+              src="./img & video/icon/sign-out.png" alt=""></a>
+        </li>
+      </ul>
+      <a href="#" class="me-4"><img width="20" id="search" height="20" src="./img & video/icon/search.png" alt=""></a>
+      <a href="#" class="me-4"><img width="20" id="bell" height="20" src="./img & video/icon/bell.png" alt=""></a>
+      <a class="nav-link dropdown-toggle text-white" style=":hover{background-color: black};" href="#" role="button"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        <img id="user" src="./img & video/icon/user.png" alt="">
+      </a>
+
+    </div>
+
+  </nav>
+
+  <!-- --------------------------Header--------------------------- -->
+  <!-- --------------------------Contain Video--------------------------- -->
+
+  <header>
+
+    <video id="background-video" autoplay loop muted>
+      <source src="./img & video/D A H M E R.mp4" type="video/mp4">
+    </video>
+    <div class="head container">
+      <div class="d-flex align-items-center"><img src="./img & video/icon.png" alt="" width="30">
+        <h4 class="mt-2" style="opacity: .8;">SERIE</h4>
+      </div>
+      <h1>D A H M E R</h1>
+      <p>MONSTRUO: LA HISTORIA DE JEFFREY DAHMER</p>
+      <div>
+        <button type="button" class="btn btn-light me-3"><img src="./img & video/icon/play.png" width="20"
+            style="margin-right: 5px;" alt=""><span>Play Now</span></button>
+        <button type="button" class="btn btn-secondary"><img src="./img & video/icon/info.png" width="20"
+            style="margin-right: 5px;" alt=""><span>More Info</span></button>
+      </div>
+    </div>
+
+  </header>
+
+
+  <!-- --------------------------Section(1)--------------------------- -->
+  <!-- --------------------------movies slide--------------------------- -->
+
+  <div id="multiImageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-touch="true">
+
+    <div class="carousel-inner">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="row row-cols-5 justify-content-md-center">
+          <div class="col"><img src="./img & video/movies/black_phone_two.webp" class="d-block w-100" alt="..."></div>
+          <div class="col"><img src="./img & video/movies/darkknight.webp" class="d-block w-100" alt="..."></div>
+          <div class="col"><img src="./img & video/movies/E_t.webp" class="d-block w-100" alt="..."></div>
+          <div class="col"><img src="./img & video/movies/Gladiator.webp" class="d-block w-100" alt="..."></div>
+          <div class="col"><img src="./img & video/movies/godzilla2.webp" class="d-block w-100" alt="..."></div>
+        </div>
+      </div>
+
+
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div class="row row-cols-5 justify-content-md-center">
+          <div class="col"><img src="./img & video/movies/godzilla_vs_kong.webp" class="d-block w-100" alt="1"></div>
+          <div class="col"><img src="./img & video/movies/Goodfellas.webp" class="d-block w-100" alt="2"></div>
+          <div class="col"><img src="./img & video/movies/interstellar.jpg" class="d-block w-100" alt="3"></div>
+          <div class="col"><img src="./img & video/movies/interstellar2.webp" class="d-block w-100" alt="4"></div>
+          <div class="col"><img src="./img & video/movies/jaws.webp" class="d-block w-100" alt="5"></div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#multiImageCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#multiImageCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+  </div>
+
+
+
+
+  <!-- --------------------------Section(2)--------------------------- -->
+  <!-- --------------------------movies Details--------------------------- -->
+
+  <section>
+    <div class="container-fluid mt-5">
+      <h3 style="color: white;">Trending</h3>
+      <div class="row row-cols-3 row-cols-md-6 g-4 justify-content-md-center mydetail">
+
+        <!-- Movie Card -->
+        <div class="col movie-card">
+          <div class="movie-wrapper">
+            <img src="./img & video/movies/jurassicpark.webp" alt="Jurassic Park" class="movie-img">
+
+            <div class="movie-info">
+              <div class="row row-cols-3 g-2">
+                <div class="col"><img src="./img & video/icon/play-button.png" class="w-75" alt="Play"></div>
+                <div class="col"><img src="./img & video/icon/add.png" class="w-75" alt="Add"></div>
+                <div class="col"><img src="./img & video/icon/circle.png" class="w-75" alt="Circle"></div>
+              </div>
+              <div class="row row-cols-4 mt-3">
+                <div class="col text-success">97% match</div>
+                <div class="col"><img src="./img & video/icon/18.png" class="w-100" alt="18+"></div>
+                <div class="col text-white">Limited Series</div>
+                <div class="col"><img src="./img & video/icon/hd-720.png" class="w-100" alt="HD"></div>
+              </div>
+              <div class="row row-cols-3 mt-3">
+                <div class="col text-white small">Provocative</div>
+                <div class="col text-white small">Psychological</div>
+                <div class="col text-white small">Thriller</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Movie Card -->
+        <div class="col movie-card">
+          <div class="movie-wrapper">
+            <img src="./img & video/movies/moon-knight.webp" alt="Jurassic Park" class="movie-img">
+
+            <div class="movie-info">
+              <div class="row row-cols-3 g-2">
+                <div class="col"><img src="./img & video/icon/play-button.png" class="w-75" alt="Play"></div>
+                <div class="col"><img src="./img & video/icon/add.png" class="w-75" alt="Add"></div>
+                <div class="col"><img src="./img & video/icon/circle.png" class="w-75" alt="Circle"></div>
+              </div>
+              <div class="row row-cols-4 mt-3">
+                <div class="col text-success">97% match</div>
+                <div class="col"><img src="./img & video/icon/18.png" class="w-100" alt="18+"></div>
+                <div class="col text-white">Limited Series</div>
+                <div class="col"><img src="./img & video/icon/hd-720.png" class="w-100" alt="HD"></div>
+              </div>
+              <div class="row row-cols-3 mt-3">
+                <div class="col text-white small">Provocative</div>
+                <div class="col text-white small">Psychological</div>
+                <div class="col text-white small">Thriller</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Movie Card -->
+        <div class="col movie-card">
+          <div class="movie-wrapper">
+            <img src="./img & video/movies/Goodfellas.webp" alt="Jurassic Park" class="movie-img">
+
+            <div class="movie-info">
+              <div class="row row-cols-3 g-2">
+                <div class="col"><img src="./img & video/icon/play-button.png" class="w-75" alt="Play"></div>
+                <div class="col"><img src="./img & video/icon/add.png" class="w-75" alt="Add"></div>
+                <div class="col"><img src="./img & video/icon/circle.png" class="w-75" alt="Circle"></div>
+              </div>
+              <div class="row row-cols-4 mt-3">
+                <div class="col text-success">97% match</div>
+                <div class="col"><img src="./img & video/icon/18.png" class="w-100" alt="18+"></div>
+                <div class="col text-white">Limited Series</div>
+                <div class="col"><img src="./img & video/icon/hd-720.png" class="w-100" alt="HD"></div>
+              </div>
+              <div class="row row-cols-3 mt-3">
+                <div class="col text-white small">Provocative</div>
+                <div class="col text-white small">Psychological</div>
+                <div class="col text-white small">Thriller</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Movie Card -->
+        <div class="col movie-card">
+          <div class="movie-wrapper">
+            <img src="./img & video/movies/shawshank.webp" alt="Jurassic Park" class="movie-img">
+
+            <div class="movie-info">
+              <div class="row row-cols-3 g-2">
+                <div class="col"><img src="./img & video/icon/play-button.png" class="w-75" alt="Play"></div>
+                <div class="col"><img src="./img & video/icon/add.png" class="w-75" alt="Add"></div>
+                <div class="col"><img src="./img & video/icon/circle.png" class="w-75" alt="Circle"></div>
+              </div>
+              <div class="row row-cols-4 mt-3">
+                <div class="col text-success">97% match</div>
+                <div class="col"><img src="./img & video/icon/18.png" class="w-100" alt="18+"></div>
+                <div class="col text-white">Limited Series</div>
+                <div class="col"><img src="./img & video/icon/hd-720.png" class="w-100" alt="HD"></div>
+              </div>
+              <div class="row row-cols-3 mt-3">
+                <div class="col text-white small">Provocative</div>
+                <div class="col text-white small">Psychological</div>
+                <div class="col text-white small">Thriller</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Movie Card -->
+        <div class="col movie-card">
+          <div class="movie-wrapper">
+            <img src="./img & video/movies/starWars.webp" alt="Jurassic Park" class="movie-img">
+
+            <div class="movie-info">
+              <div class="row row-cols-3 g-2">
+                <div class="col"><img src="./img & video/icon/play-button.png" class="w-75" alt="Play"></div>
+                <div class="col"><img src="./img & video/icon/add.png" class="w-75" alt="Add"></div>
+                <div class="col"><img src="./img & video/icon/circle.png" class="w-75" alt="Circle"></div>
+              </div>
+              <div class="row row-cols-4 mt-3">
+                <div class="col text-success">97% match</div>
+                <div class="col"><img src="./img & video/icon/18.png" class="w-100" alt="18+"></div>
+                <div class="col text-white">Limited Series</div>
+                <div class="col"><img src="./img & video/icon/hd-720.png" class="w-100" alt="HD"></div>
+              </div>
+              <div class="row row-cols-3 mt-3">
+                <div class="col text-white small">Provocative</div>
+                <div class="col text-white small">Psychological</div>
+                <div class="col text-white small">Thriller</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Movie Card -->
+        <div class="col movie-card">
+          <div class="movie-wrapper">
+            <img src="./img & video/movies/THE-WARRIORS.jpg" alt="Jurassic Park" class="movie-img">
+
+            <div class="movie-info">
+              <div class="row row-cols-3 g-2">
+                <div class="col"><img src="./img & video/icon/play-button.png" class="w-75" alt="Play"></div>
+                <div class="col"><img src="./img & video/icon/add.png" class="w-75" alt="Add"></div>
+                <div class="col"><img src="./img & video/icon/circle.png" class="w-75" alt="Circle"></div>
+              </div>
+              <div class="row row-cols-4 mt-3">
+                <div class="col text-success">97% match</div>
+                <div class="col"><img src="./img & video/icon/18.png" class="w-100" alt="18+"></div>
+                <div class="col text-white">Limited Series</div>
+                <div class="col"><img src="./img & video/icon/hd-720.png" class="w-100" alt="HD"></div>
+              </div>
+              <div class="row row-cols-3 mt-3">
+                <div class="col text-white small">Provocative</div>
+                <div class="col text-white small">Psychological</div>
+                <div class="col text-white small">Thriller</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- --------------------------Section(3)--------------------------- -->
+  <!-- --------------------------movies Details cont.--------------------------- -->
+
+  <section>
+    <div class="container-fluid mt-5">
+      <h3 style="color: white;">Recently added</h3>
+      <div class="row row-cols-3 row-cols-md-6 g-4 justify-content-md-center mydetail">
+
+        <!-- Movie Card -->
+        <div class="col movie-card">
+          <div class="movie-wrapper">
+            <img src="./img & video/movies/bad_guys_two.webp" alt="Jurassic Park" class="movie-img">
+
+            <div class="movie-info">
+              <div class="row row-cols-3 g-2">
+                <div class="col"><img src="./img & video/icon/play-button.png" class="w-75" alt="Play"></div>
+                <div class="col"><img src="./img & video/icon/add.png" class="w-75" alt="Add"></div>
+                <div class="col"><img src="./img & video/icon/circle.png" class="w-75" alt="Circle"></div>
+              </div>
+              <div class="row row-cols-4 mt-3">
+                <div class="col text-success">97% match</div>
+                <div class="col"><img src="./img & video/icon/18.png" class="w-100" alt="18+"></div>
+                <div class="col text-white">Limited Series</div>
+                <div class="col"><img src="./img & video/icon/hd-720.png" class="w-100" alt="HD"></div>
+              </div>
+              <div class="row row-cols-3 mt-3">
+                <div class="col text-white small">Provocative</div>
+                <div class="col text-white small">Psychological</div>
+                <div class="col text-white small">Thriller</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Movie Card -->
+        <div class="col movie-card">
+          <div class="movie-wrapper">
+            <img src="./img & video/movies/batman_returns.webp" alt="Jurassic Park" class="movie-img">
+
+            <div class="movie-info">
+              <div class="row row-cols-3 g-2">
+                <div class="col"><img src="./img & video/icon/play-button.png" class="w-75" alt="Play"></div>
+                <div class="col"><img src="./img & video/icon/add.png" class="w-75" alt="Add"></div>
+                <div class="col"><img src="./img & video/icon/circle.png" class="w-75" alt="Circle"></div>
+              </div>
+              <div class="row row-cols-4 mt-3">
+                <div class="col text-success">97% match</div>
+                <div class="col"><img src="./img & video/icon/18.png" class="w-100" alt="18+"></div>
+                <div class="col text-white">Limited Series</div>
+                <div class="col"><img src="./img & video/icon/hd-720.png" class="w-100" alt="HD"></div>
+              </div>
+              <div class="row row-cols-3 mt-3">
+                <div class="col text-white small">Provocative</div>
+                <div class="col text-white small">Psychological</div>
+                <div class="col text-white small">Thriller</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Movie Card -->
+        <div class="col movie-card">
+          <div class="movie-wrapper">
+            <img src="./img & video/movies/cars2.webp" alt="Jurassic Park" class="movie-img">
+
+            <div class="movie-info">
+              <div class="row row-cols-3 g-2">
+                <div class="col"><img src="./img & video/icon/play-button.png" class="w-75" alt="Play"></div>
+                <div class="col"><img src="./img & video/icon/add.png" class="w-75" alt="Add"></div>
+                <div class="col"><img src="./img & video/icon/circle.png" class="w-75" alt="Circle"></div>
+              </div>
+              <div class="row row-cols-4 mt-3">
+                <div class="col text-success">97% match</div>
+                <div class="col"><img src="./img & video/icon/18.png" class="w-100" alt="18+"></div>
+                <div class="col text-white">Limited Series</div>
+                <div class="col"><img src="./img & video/icon/hd-720.png" class="w-100" alt="HD"></div>
+              </div>
+              <div class="row row-cols-3 mt-3">
+                <div class="col text-white small">Provocative</div>
+                <div class="col text-white small">Psychological</div>
+                <div class="col text-white small">Thriller</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Movie Card -->
+        <div class="col movie-card">
+          <div class="movie-wrapper">
+            <img src="./img & video/movies/nobody_two.webp" alt="Jurassic Park" class="movie-img">
+
+            <div class="movie-info">
+              <div class="row row-cols-3 g-2">
+                <div class="col"><img src="./img & video/icon/play-button.png" class="w-75" alt="Play"></div>
+                <div class="col"><img src="./img & video/icon/add.png" class="w-75" alt="Add"></div>
+                <div class="col"><img src="./img & video/icon/circle.png" class="w-75" alt="Circle"></div>
+              </div>
+              <div class="row row-cols-4 mt-3">
+                <div class="col text-success">97% match</div>
+                <div class="col"><img src="./img & video/icon/18.png" class="w-100" alt="18+"></div>
+                <div class="col text-white">Limited Series</div>
+                <div class="col"><img src="./img & video/icon/hd-720.png" class="w-100" alt="HD"></div>
+              </div>
+              <div class="row row-cols-3 mt-3">
+                <div class="col text-white small">Provocative</div>
+                <div class="col text-white small">Psychological</div>
+                <div class="col text-white small">Thriller</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Movie Card -->
+        <div class="col movie-card">
+          <div class="movie-wrapper">
+            <img src="./img & video/movies/skyfall.webp" alt="Jurassic Park" class="movie-img">
+
+            <div class="movie-info">
+              <div class="row row-cols-3 g-2">
+                <div class="col"><img src="./img & video/icon/play-button.png" class="w-75" alt="Play"></div>
+                <div class="col"><img src="./img & video/icon/add.png" class="w-75" alt="Add"></div>
+                <div class="col"><img src="./img & video/icon/circle.png" class="w-75" alt="Circle"></div>
+              </div>
+              <div class="row row-cols-4 mt-3">
+                <div class="col text-success">97% match</div>
+                <div class="col"><img src="./img & video/icon/18.png" class="w-100" alt="18+"></div>
+                <div class="col text-white">Limited Series</div>
+                <div class="col"><img src="./img & video/icon/hd-720.png" class="w-100" alt="HD"></div>
+              </div>
+              <div class="row row-cols-3 mt-3">
+                <div class="col text-white small">Provocative</div>
+                <div class="col text-white small">Psychological</div>
+                <div class="col text-white small">Thriller</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Movie Card -->
+        <div class="col movie-card">
+          <div class="movie-wrapper">
+            <img src="./img & video/movies/bd2.webp" alt="Jurassic Park" class="movie-img">
+
+            <div class="movie-info">
+              <div class="row row-cols-3 g-2">
+                <div class="col"><img src="./img & video/icon/play-button.png" class="w-75" alt="Play"></div>
+                <div class="col"><img src="./img & video/icon/add.png" class="w-75" alt="Add"></div>
+                <div class="col"><img src="./img & video/icon/circle.png" class="w-75" alt="Circle"></div>
+              </div>
+              <div class="row row-cols-4 mt-3">
+                <div class="col text-success">97% match</div>
+                <div class="col"><img src="./img & video/icon/18.png" class="w-100" alt="18+"></div>
+                <div class="col text-white">Limited Series</div>
+                <div class="col"><img src="./img & video/icon/hd-720.png" class="w-100" alt="HD"></div>
+              </div>
+              <div class="row row-cols-3 mt-3">
+                <div class="col text-white small">Provocative</div>
+                <div class="col text-white small">Psychological</div>
+                <div class="col text-white small">Thriller</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+  <!-- --------------------------Section(4)--------------------------- -->
+  <!-- --------------------------movies Details Horror--------------------------- -->
+
+  <section>
+    <div class="container-fluid mt-5">
+      <h3 style="color: white;">Horror Movies</h3>
+      <div class="row row-cols-3 row-cols-md-6 g-4 justify-content-md-center mydetail">
+
+        <!-- Movie Card -->
+        <div class="col movie-card">
+          <div class="movie-wrapper">
+            <img src="./img & video/movies/friday13.webp" alt="Jurassic Park" class="movie-img">
+
+            <div class="movie-info">
+              <div class="row row-cols-3 g-2">
+                <div class="col"><img src="./img & video/icon/play-button.png" class="w-75" alt="Play"></div>
+                <div class="col"><img src="./img & video/icon/add.png" class="w-75" alt="Add"></div>
+                <div class="col"><img src="./img & video/icon/circle.png" class="w-75" alt="Circle"></div>
+              </div>
+              <div class="row row-cols-4 mt-3">
+                <div class="col text-success">97% match</div>
+                <div class="col"><img src="./img & video/icon/18.png" class="w-100" alt="18+"></div>
+                <div class="col text-white">Limited Series</div>
+                <div class="col"><img src="./img & video/icon/hd-720.png" class="w-100" alt="HD"></div>
+              </div>
+              <div class="row row-cols-3 mt-3">
+                <div class="col text-white small">Provocative</div>
+                <div class="col text-white small">Psychological</div>
+                <div class="col text-white small">Thriller</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Movie Card -->
+        <div class="col movie-card">
+          <div class="movie-wrapper">
+            <img src="./img & video/movies/m3gan.webp" alt="Jurassic Park" class="movie-img">
+
+            <div class="movie-info">
+              <div class="row row-cols-3 g-2">
+                <div class="col"><img src="./img & video/icon/play-button.png" class="w-75" alt="Play"></div>
+                <div class="col"><img src="./img & video/icon/add.png" class="w-75" alt="Add"></div>
+                <div class="col"><img src="./img & video/icon/circle.png" class="w-75" alt="Circle"></div>
+              </div>
+              <div class="row row-cols-4 mt-3">
+                <div class="col text-success">97% match</div>
+                <div class="col"><img src="./img & video/icon/18.png" class="w-100" alt="18+"></div>
+                <div class="col text-white">Limited Series</div>
+                <div class="col"><img src="./img & video/icon/hd-720.png" class="w-100" alt="HD"></div>
+              </div>
+              <div class="row row-cols-3 mt-3">
+                <div class="col text-white small">Provocative</div>
+                <div class="col text-white small">Psychological</div>
+                <div class="col text-white small">Thriller</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Movie Card -->
+        <div class="col movie-card">
+          <div class="movie-wrapper">
+            <img src="./img & video/movies/longlegs.webp" alt="Jurassic Park" class="movie-img">
+
+            <div class="movie-info">
+              <div class="row row-cols-3 g-2">
+                <div class="col"><img src="./img & video/icon/play-button.png" class="w-75" alt="Play"></div>
+                <div class="col"><img src="./img & video/icon/add.png" class="w-75" alt="Add"></div>
+                <div class="col"><img src="./img & video/icon/circle.png" class="w-75" alt="Circle"></div>
+              </div>
+              <div class="row row-cols-4 mt-3">
+                <div class="col text-success">97% match</div>
+                <div class="col"><img src="./img & video/icon/18.png" class="w-100" alt="18+"></div>
+                <div class="col text-white">Limited Series</div>
+                <div class="col"><img src="./img & video/icon/hd-720.png" class="w-100" alt="HD"></div>
+              </div>
+              <div class="row row-cols-3 mt-3">
+                <div class="col text-white small">Provocative</div>
+                <div class="col text-white small">Psychological</div>
+                <div class="col text-white small">Thriller</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Movie Card -->
+        <div class="col movie-card">
+          <div class="movie-wrapper">
+            <img src="./img & video/movies/nosferatu.webp" alt="Jurassic Park" class="movie-img">
+
+            <div class="movie-info">
+              <div class="row row-cols-3 g-2">
+                <div class="col"><img src="./img & video/icon/play-button.png" class="w-75" alt="Play"></div>
+                <div class="col"><img src="./img & video/icon/add.png" class="w-75" alt="Add"></div>
+                <div class="col"><img src="./img & video/icon/circle.png" class="w-75" alt="Circle"></div>
+              </div>
+              <div class="row row-cols-4 mt-3">
+                <div class="col text-success">97% match</div>
+                <div class="col"><img src="./img & video/icon/18.png" class="w-100" alt="18+"></div>
+                <div class="col text-white">Limited Series</div>
+                <div class="col"><img src="./img & video/icon/hd-720.png" class="w-100" alt="HD"></div>
+              </div>
+              <div class="row row-cols-3 mt-3">
+                <div class="col text-white small">Provocative</div>
+                <div class="col text-white small">Psychological</div>
+                <div class="col text-white small">Thriller</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Movie Card -->
+        <div class="col movie-card">
+          <div class="movie-wrapper">
+            <img src="./img & video/movies/jaws.webp" alt="Jurassic Park" class="movie-img">
+
+            <div class="movie-info">
+              <div class="row row-cols-3 g-2">
+                <div class="col"><img src="./img & video/icon/play-button.png" class="w-75" alt="Play"></div>
+                <div class="col"><img src="./img & video/icon/add.png" class="w-75" alt="Add"></div>
+                <div class="col"><img src="./img & video/icon/circle.png" class="w-75" alt="Circle"></div>
+              </div>
+              <div class="row row-cols-4 mt-3">
+                <div class="col text-success">97% match</div>
+                <div class="col"><img src="./img & video/icon/18.png" class="w-100" alt="18+"></div>
+                <div class="col text-white">Limited Series</div>
+                <div class="col"><img src="./img & video/icon/hd-720.png" class="w-100" alt="HD"></div>
+              </div>
+              <div class="row row-cols-3 mt-3">
+                <div class="col text-white small">Provocative</div>
+                <div class="col text-white small">Psychological</div>
+                <div class="col text-white small">Thriller</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Movie Card -->
+        <div class="col movie-card">
+          <div class="movie-wrapper">
+            <img src="./img & video/movies/black_phone_two.webp" alt="Jurassic Park" class="movie-img">
+
+            <div class="movie-info">
+              <div class="row row-cols-3 g-2">
+                <div class="col"><img src="./img & video/icon/play-button.png" class="w-75" alt="Play"></div>
+                <div class="col"><img src="./img & video/icon/add.png" class="w-75" alt="Add"></div>
+                <div class="col"><img src="./img & video/icon/circle.png" class="w-75" alt="Circle"></div>
+              </div>
+              <div class="row row-cols-4 mt-3">
+                <div class="col text-success">97% match</div>
+                <div class="col"><img src="./img & video/icon/18.png" class="w-100" alt="18+"></div>
+                <div class="col text-white">Limited Series</div>
+                <div class="col"><img src="./img & video/icon/hd-720.png" class="w-100" alt="HD"></div>
+              </div>
+              <div class="row row-cols-3 mt-3">
+                <div class="col text-white small">Provocative</div>
+                <div class="col text-white small">Psychological</div>
+                <div class="col text-white small">Thriller</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- --------------------------Footer--------------------------- -->
+
+  <footer>
+    <div class="container">
+      <div class="row row-cols-1 row-cols-lg-4 row-cols-md-2 g-4">
+        <div class="col">
+          <h4>Audio description</h4>
+          <h4>Investor Relation</h4>
+          <h4>Terms and Conditions</h4>
+        </div>
+        <div class="col">
+          <h4>Legal Notices</h4>
+          <h4>Audio and Subtitle</h4>
+          <h4>Media</h4>
+        </div>
+        <div class="col">
+          <h4>Privacy</h4>
+          <h4>Contact Us</h4>
+          <h4>Help Center</h4>
+        </div>
+        <div class="col">
+          <h4>Jobs</h4>
+          <h4>Gift card</h4>
+          <h4>Subscription</h4>
+        </div>
+        <div class="col">
+          <div class="d-flex align-items-center">
+            <h3 style="color: #fa1212;">1997-2025</h3>
+            <img class="mb-2" width="100" height="50" src="./img & video/netflix_logo.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+  <script>
+    function navScroll() {
+      let navbar = document.getElementById("nav")
+      if (window.pageYOffset >= 140) {
+
+        navbar.classList.add("bg-blaack")
+        navbar.classList.remove("bg-opacity")
+
+      } else {
+        navbar.classList.remove("bg-blaack")
+        navbar.classList.add("bg-opacity")
+      }
+    }
+
+  </script>
+
+  <script src="./js/bootstrap.bundle.js"></script>
+</body>
+
+</html>
