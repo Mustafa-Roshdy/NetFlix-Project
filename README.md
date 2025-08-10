@@ -3,24 +3,27 @@
 A simple Netflix-inspired website built with **HTML**, **Bootstrap**, and **JavaScript**.  
 The project includes a home page, a shop page, a collection page and sign-in/sign-up screens.
 
-## 📌 Features
-- **Home Page (home.html)**  
-  - Netflix-style UI with hero section and movie/show cards.
-  - Responsive design using Bootstrap.
-  
-- **Shop Page**  
-  - Display of movie or merchandise items.
-  - Organized layout for browsing.
+#🚀 Features
+🎥 Netflix-style UI
 
-- **Authentication Screens**  
-  - Sign-In page for returning users.
-  - Sign-Up page for new account creation.
+📱 Responsive Design using Bootstrap
 
-## 🛠️ Tech Stack
-- **HTML5**
-- **Bootstrap CSS**
-- **Bootstrap JavaScript**
-- **Custom JavaScript**
+🛍️ Shop Page for browsing movies/shows
+
+🎞️ Collection Page showcasing selected content
+
+🔑 Sign-in & Sign-up screens for authentication flow
+
+🌌 Full-screen Background Images with dark overlay
+
+#🛠️ Technologies Used
+HTML5
+
+Bootstrap 5 (CSS & JS)
+
+Custom CSS
+
+JavaScript (Optional for interactivity)
 
 ## 📂 Project Structure
 Netflix-Project/
@@ -49,6 +52,15 @@ Netflix-Project/
    Navigate to the folder and open home.html in your browser.
 
 3. **Enjoy exploring the site!**
+
+📌 Notes
+No backend is connected — this is a frontend-only project.
+
+You can integrate it with a backend (Node.js, PHP, etc.) to handle authentication & data.
+
+
+📄 License
+This project is licensed under the MIT License — you’re free to use, modify, and distribute it.
 
 
 
