@@ -43,7 +43,7 @@ Netflix-Project/
    git clone https://github.com/Mustafa-Roshdy/NetFlix-Project.git
 
 2. **Open the project**
-   ```Navigate to the folder and open home.html in your browser.
+   Navigate to the folder and open home.html in your browser.
 
 3. **Enjoy exploring the site!**
 
