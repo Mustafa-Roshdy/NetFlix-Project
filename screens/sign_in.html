@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix | Sign In</title>
+    <link rel="icon" type="image/x-icon" href="../img & video/icon.png">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #nav img {
+            transition: all 0.3s ease-in-out;
+
+
+        }
+
+        #nav .navbar-brand:hover img {
+            transform: scaleY(2);
+            transition: .3s;
+        }
+
+        #nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .bg-opacity {
+            background-image: linear-gradient(to top, rgba(255, 0, 0, 0), rgba(255, 0, 0, 0));
+            transition: 1s;
+        }
+
+        body {
+            background-image: url("../img & video/Netflix_wallpaper.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            /* Adjust darkness here */
+            z-index: -1;
+        }
+
+        .login-form-container {
+            background-color: rgba(0, 0, 0, 0.75);
+            padding: 60px 68px 40px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 450px;
+            z-index: 2;
+        }
+
+        .form-control {
+            background-color: #333;
+            border: 1px solid #333;
+            color: white;
+            height: 50px;
+            margin-bottom: 20px;
+        }
+
+        .form-control::placeholder {
+            color: #8c8c8c;
+        }
+
+        .form-control:focus {
+            background-color: #333;
+            border-color: #e50914;
+            color: white;
+            box-shadow: none;
+        }
+
+        .btn-netflix {
+            background-color: #e50914;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 16px 0;
+            width: 100%;
+            border: none;
+            margin-top: 20px;
+        }
+
+        .btn-netflix:hover {
+            color: white;
+        }
+
+        .form-check-input:checked {
+            background-color: #e50914;
+            border-color: #e50914;
+        }
+
+        .form-check-label {
+            color: #b3b3b3;
+            font-size: 13px;
+        }
+
+        .form-check {
+            padding-left: 1.5em;
+        }
+
+        .form-check-input {
+            margin-left: -1.5em;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- --------------------------NavBar--------------------------- -->
+
+    <nav id="nav" class="navbar navbar-expand-lg bg-opacity">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="../img & video/netflix_logo.png" alt="Logo" width="250" class="d-inline-block align-text-top">
+            </a>
+        </div>
+
+    </nav>
+
+
+    <!-- --------------------------Header--------------------------- -->
+
+    <header class="container">
+        <div class="login-form-container" style="margin: 20vh auto;">
+            <h1 class="text-start text-white fs-7 mb-4">Sign In</h1>
+            <form action="../home.html">
+                <div class="mb-3">
+                    <input type="email" class="form-control" id="email" placeholder="Email or phone number">
+                </div>
+                <div class="mb-3">
+                    <input type="password" class="form-control" id="password" placeholder="Password">
+                </div>
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">
+                            Remember me
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-netflix">Sign In</button>
+
+            </form>
+        </div>
+    </header>
+
+
+
+
+    <script src="../js/bootstrap.bundle.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stranger Things</title>
+    <link rel="icon" type="image/x-icon" href="../img & video/icon.png">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #nav .navbar-nav .nav-item .nav-link:hover {
+            color: #9b0606 !important;
+        }
+
+        #nav img {
+            transition: all 0.3s ease-in-out;
+
+
+        }
+
+        #nav .navbar-brand:hover img {
+            transform: scaleY(2);
+            transition: .3s;
+        }
+
+        #bell:hover,
+        #search:hover,
+        #user:hover {
+            transform: scale(1.5);
+            transition: .1s;
+        }
+
+        .dropdown-menu {
+            --bs-dropdown-link-active-bg: #9b0606;
+            --bs-dropdown-link-hover-bg: #383737;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        #nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .bg-opacity {
+            background-image: linear-gradient(to top, rgba(255, 0, 0, 0), rgb(1, 4, 9));
+            transition: 1s;
+        }
+
+        .bg-blaack {
+            background-color: black;
+            transition: 1s;
+        }
+
+        header h2 {
+            color: white;
+            text-align: center;
+            margin-top: 150px;
+            font-size: 5vw;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            opacity: .9;
+        }
+
+        h6 {
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+            padding-block: 10px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        header .myHead {
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+            padding-block: 10px;
+        }
+
+        .mydetail div {
+            transition: all 0.3s ease-in-out;
+            transform-origin: center;
+
+        }
+
+        .mydetail div:hover div {
+            opacity: .5;
+            transition: 1s;
+            transform: scale(1.01);
+
+
+        }
+    </style>
+</head>
+
+<body onscroll="navScroll()">
+
+    <!-- --------------------------NavBar--------------------------- -->
+
+    <nav id="nav" class="navbar navbar-expand-lg bg-opacity">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="../img & video/netflix_logo.png" alt="Logo" width="100" height="64"
+                    class="d-inline-block align-text-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span><img class="navbar-toggler-icon" src="../img & video/icon/menu.png" alt=""></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" style="opacity: 0.7;" href="../home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" style="opacity: 0.7;" href="#">Movies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" style="opacity: 0.7;" href="#">Series</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" style="opacity: 0.7;" href="#">TV Shows</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" style="opacity: 0.7;" href="#">News & Populer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" style="opacity: 0.7;" href="#">My List</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" style="opacity: 0.7;" href="../screens/shop.html">Shop</a>
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <ul class="dropdown-menu bg-dark" style="left: 75%;">
+                <li><a class="dropdown-item text-white" href="./sign_in.html">Confirm</a></li>
+                <li><a class="dropdown-item text-white" href="./sign_up.html">Log Off <img
+                            src="../img & video/icon/sign-out.png" alt=""></a>
+                </li>
+            </ul>
+            <a href="#" class="me-4"><img width="20" id="search" height="20" src="../img & video/icon/search.png"
+                    alt=""></a>
+            <a href="#" class="me-4"><img width="20" id="bell" height="20" src="../img & video/icon/bell.png"
+                    alt=""></a>
+            <a class="nav-link dropdown-toggle text-white" style=":hover{background-color: black};" href="#"
+                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img id="user" src="../img & video/icon/user.png" alt="">
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- --------------------------Header--------------------------- -->
+
+    <header>
+        <div class="container-fluid">
+            <div>
+                <h2>STRANGER THINGS</h2>
+            </div>
+
+            <div class="mt-5 myHead row row-cols-1 row-cols-lg-3 row-cols-md-2 align-items-center row-gap-4">
+                <div class="col">
+                    <div class="d-flex align-items-center"><button class="btn btn-outline-light" type="button"
+                            data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+                            aria-controls="offcanvasWithBothOptions">
+                            Filter & Sort
+                        </button>
+                        <p style="color: white; opacity: .8; margin-top: 10px; margin-left: 10px;">273 products</p>
+                    </div>
+
+
+                    <div class="offcanvas offcanvas-start" style="background-color: #383737; color: white;"
+                        data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+                        aria-labelledby="offcanvasWithBothOptionsLabel">
+
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">SORT BY</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+
+                        <div class="offcanvas-body">
+
+                            <!-- Sort By -->
+                            <div class="mb-4">
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="sort" id="sortNewest">
+                                    <label class="form-check-label" for="sortNewest">Newest</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="sort" id="sortLowHigh">
+                                    <label class="form-check-label" for="sortLowHigh">Price: Low to High</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="sort" id="sortHighLow">
+                                    <label class="form-check-label" for="sortHighLow">Price: High to Low</label>
+                                </div>
+                            </div>
+
+                            <!-- Price -->
+                            <div class="mb-4">
+                                <h6>PRICE</h6>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="priceUnder10">
+                                    <label class="form-check-label" for="priceUnder10">Less than $10</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="price10to20">
+                                    <label class="form-check-label" for="price10to20">$10 to $20</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox">
+                                    <label class="form-check-label" for="price20plus">$20 to $40</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox">
+                                    <label class="form-check-label" for="price20plus">$40 to $60</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox">
+                                    <label class="form-check-label" for="price20plus">$60 to $80</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox">
+                                    <label class="form-check-label" for="price20plus">$80 to $100</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox">
+                                    <label class="form-check-label" for="price20plus">$100 to $150</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox">
+                                    <label class="form-check-label" for="price20plus">$150 to $200</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox">
+                                    <label class="form-check-label" for="price20plus">$200 to $300</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox">
+                                    <label class="form-check-label" for="price20plus">$300 to $400</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox">
+                                    <label class="form-check-label" for="price20plus">More than $400</label>
+                                </div>
+                            </div>
+
+                            <!-- Title -->
+                            <div class="mb-4">
+                                <h6>Title</h6>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="titleStrangerThings">
+                                    <label class="form-check-label" for="titleStrangerThings">Stranger Things</label>
+                                </div>
+                            </div>
+
+                            <!-- Type -->
+                            <div class="mb-4">
+                                <h6>Type</h6>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="typeBags">
+                                    <label class="form-check-label" for="typeBags">Bags</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="typeBeauty">
+                                    <label class="form-check-label" for="typeBeauty">Beauty</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="">
+                                    <label class="form-check-label" for="typeClothing">Bottoms</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="">
+                                    <label class="form-check-label" for="typeClothing">Hoodies</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="">
+                                    <label class="form-check-label" for="typeClothing">Jewelry</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="">
+                                    <label class="form-check-label" for="typeClothing">Costumes</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="">
+                                    <label class="form-check-label" for="typeClothing">HeadWear</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="">
+                                    <label class="form-check-label" for="typeClothing">Clothing</label>
+                                </div>
+
+                            </div>
+
+                            <!-- Apply Button -->
+                            <div class="text-center">
+                                <button class="btn btn-danger w-100" type="button">Apply</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="d-flex"><a style="color: white;" href="#">HOME</a>
+                        <a style="color: white; margin-left: 5px;" href="#">STRANGER THINGS</a>
+                    </div>
+
+                </div>
+                <div class="col" id="controlBTN">
+                    <div class="d-flex">
+                        <button type="button" onclick="makeFour()" class="btn btn-outline-light">4</button>
+                        <button type="button" onclick="makeTwo()" style="margin-left: 5px;"
+                            class="btn btn-outline-light">2</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- --------------------------Section(2)--------------------------- -->
+    <!-- --------------------------sales Images--------------------------- -->
+
+    <section>
+        <div class="container mt-5">
+            <div class="row row-cols-1 row-cols-lg-4 row-cols-md-2 justify-content-center text-center mydetail row-gap-4"
+                id="myList">
+
+                <!-- Sale Card -->
+                <div class="col sale-card">
+                    <div class="sale-wrapper">
+                        <img src="../img & video/sales/product/CBRA.webp" alt="" class="d-block w-100 sale-img">
+
+                        <div class="sale-card mt-3 text-white">
+                            <h4>Squid Game Worker Wooden Ornament</h4>
+                            <h5>LE 984.00</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sale Card -->
+                <div class="col sale-card">
+                    <div class="sale-wrapper">
+                        <img src="../img & video/sales/product/DMC-T.webp" alt="" class="d-block w-100 sale-img">
+
+                        <div class="sale-card mt-3 text-white">
+                            <h4>Squid Game Young-Hee Wooden Ornament</h4>
+                            <h5>LE 984.00</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sale Card -->
+                <div class="col sale-card">
+                    <div class="sale-wrapper">
+                        <img src="../img & video/sales/product/DMC.webp" alt="" class="d-block w-100 sale-img">
+
+                        <div class="sale-card mt-3 text-white">
+                            <h4>Hellfire Club Hellfire Holiday Wooden Ornament</h4>
+                            <h5>LE 983.00</h5>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Sale Card -->
+                <div class="col sale-card">
+                    <div class="sale-wrapper">
+                        <img src="../img & video/sales/product/KP.webp" alt="" class="d-block w-100 sale-img">
+
+                        <div class="sale-card mt-3 text-white">
+                            <h4>Hellfire Club Hellfire Holiday Wooden Ornament</h4>
+                            <h5>LE 983.00</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sale Card -->
+                <div class="col sale-card">
+                    <div class="sale-wrapper">
+                        <img src="../img & video/sales/product/KP_black.webp" alt="" class="d-block w-100 sale-img">
+
+                        <div class="sale-card mt-3 text-white">
+                            <h4>Hellfire Club Hellfire Holiday Wooden Ornament</h4>
+                            <h5>LE 983.00</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sale Card -->
+                <div class="col sale-card">
+                    <div class="sale-wrapper">
+                        <img src="../img & video/sales/product/KP_white.webp" alt="" class="d-block w-100 sale-img">
+
+                        <div class="sale-card mt-3 text-white">
+                            <h4>Hellfire Club Hellfire Holiday Wooden Ornament</h4>
+                            <h5>LE 983.00</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sale Card -->
+                <div class="col sale-card">
+                    <div class="sale-wrapper">
+                        <img src="../img & video/sales/product/lady_mug.webp" alt="" class="d-block w-100 sale-img">
+
+                        <div class="sale-card mt-3 text-white">
+                            <h4>Hellfire Club Hellfire Holiday Wooden Ornament</h4>
+                            <h5>LE 983.00</h5>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Sale Card -->
+                <div class="col sale-card">
+                    <div class="sale-wrapper">
+                        <img src="../img & video/sales/product/SG.webp" alt="" class="d-block w-100 sale-img">
+
+                        <div class="sale-card mt-3 text-white">
+                            <h4>Hellfire Club Hellfire Holiday Wooden Ornament</h4>
+                            <h5>LE 983.00</h5>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Sale Card -->
+                <div class="col sale-card">
+                    <div class="sale-wrapper">
+                        <img src="../img & video/sales/product/SG_black.webp" alt="" class="d-block w-100 sale-img">
+
+                        <div class="sale-card mt-3 text-white">
+                            <h4>Hellfire Club Hellfire Holiday Wooden Ornament</h4>
+                            <h5>LE 983.00</h5>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Sale Card -->
+                <div class="col sale-card">
+                    <div class="sale-wrapper">
+                        <img src="../img & video/sales/product/SQG-AURT.webp" alt="" class="d-block w-100 sale-img">
+
+                        <div class="sale-card mt-3 text-white">
+                            <h4>Hellfire Club Hellfire Holiday Wooden Ornament</h4>
+                            <h5>LE 983.00</h5>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Sale Card -->
+                <div class="col sale-card">
+                    <div class="sale-wrapper">
+                        <img src="../img & video/sales/product/SQG.webp" alt="" class="d-block w-100 sale-img">
+
+                        <div class="sale-card mt-3 text-white">
+                            <h4>Hellfire Club Hellfire Holiday Wooden Ornament</h4>
+                            <h5>LE 983.00</h5>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Sale Card -->
+                <div class="col sale-card">
+                    <div class="sale-wrapper">
+                        <img src="../img & video/sales/product/SQG_white.webp" alt="" class="d-block w-100 sale-img">
+
+                        <div class="sale-card mt-3 text-white">
+                            <h4>Hellfire Club Hellfire Holiday Wooden Ornament</h4>
+                            <h5>LE 983.00</h5>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Sale Card -->
+                <div class="col sale-card">
+                    <div class="sale-wrapper">
+                        <img src="../img & video/sales/SG-HFD5.webp" alt="" class="d-block w-100 sale-img">
+
+                        <div class="sale-card mt-3 text-white">
+                            <h4>Hellfire Club Hellfire Holiday Wooden Ornament</h4>
+                            <h5>LE 983.00</h5>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Sale Card -->
+                <div class="col sale-card">
+                    <div class="sale-wrapper">
+                        <img src="../img & video/sales/SG-HFP.webp" alt="" class="d-block w-100 sale-img">
+
+                        <div class="sale-card mt-3 text-white">
+                            <h4>Hellfire Club Hellfire Holiday Wooden Ornament</h4>
+                            <h5>LE 983.00</h5>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Sale Card -->
+                <div class="col sale-card">
+                    <div class="sale-wrapper">
+                        <img src="../img & video/sales/SQG-DLL.webp" alt="" class="d-block w-100 sale-img">
+
+                        <div class="sale-card mt-3 text-white">
+                            <h4>Hellfire Club Hellfire Holiday Wooden Ornament</h4>
+                            <h5>LE 983.00</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sale Card -->
+                <div class="col sale-card">
+                    <div class="sale-wrapper">
+                        <img src="../img & video/sales/SQG-DL.webp" alt="" class="d-block w-100 sale-img">
+
+                        <div class="sale-card mt-3 text-white">
+                            <h4>Hellfire Club Hellfire Holiday Wooden Ornament</h4>
+                            <h5>LE 983.00</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sale Card -->
+                <div class="col sale-card">
+                    <div class="sale-wrapper">
+                        <img src="../img & video/sales/SQG-SYTSRT.webp" alt="" class="d-block w-100 sale-img">
+
+                        <div class="sale-card mt-3 text-white">
+                            <h4>Hellfire Club Hellfire Holiday Wooden Ornament</h4>
+                            <h5>LE 983.00</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sale Card -->
+                <div class="col sale-card">
+                    <div class="sale-wrapper">
+                        <img src="../img & video/sales/ST-HF.webp" alt="" class="d-block w-100 sale-img">
+
+                        <div class="sale-card mt-3 text-white">
+                            <h4>Hellfire Club Hellfire Holiday Wooden Ornament</h4>
+                            <h5>LE 983.00</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sale Card -->
+                <div class="col sale-card">
+                    <div class="sale-wrapper">
+                        <img src="../img & video/sales/ST-HFD.webp" alt="" class="d-block w-100 sale-img">
+
+                        <div class="sale-card mt-3 text-white">
+                            <h4>Hellfire Club Hellfire Holiday Wooden Ornament</h4>
+                            <h5>LE 983.00</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sale Card -->
+                <div class="col sale-card">
+                    <div class="sale-wrapper">
+                        <img src="../img & video/sales/SQG.webp" alt="" class="d-block w-100 sale-img">
+
+                        <div class="sale-card mt-3 text-white">
+                            <h4>Hellfire Club Hellfire Holiday Wooden Ornament</h4>
+                            <h5>LE 983.00</h5>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <script>
+        // row-cols-1 row-cols-lg-4 row-cols-md-2 
+        var myList = document.getElementById("myList")
+        function navScroll() {
+            let navbar = document.getElementById("nav")
+            if (window.pageYOffset >= 140) {
+
+                navbar.classList.add("bg-blaack")
+                navbar.classList.remove("bg-opacity")
+
+            } else {
+                navbar.classList.remove("bg-blaack")
+                navbar.classList.add("bg-opacity")
+            }
+
+        }
+
+
+        function makeTwo() {
+            myList.classList.remove("row-cols-lg-4")
+        }
+        function makeFour() {
+            myList.classList.add("row-cols-lg-4")
+        }
+
+
+        function checkBtnVisibility() {
+            var btn = document.getElementById("controlBTN");
+            if (window.innerWidth <= 992) {
+                btn.style.display = "none";
+            } else {
+                btn.style.display = "block";
+            }
+        }
+
+        checkBtnVisibility();
+
+        // Run when window resizes
+        window.addEventListener("resize", checkBtnVisibility);
+
+
+    </script>
+
+    <script src="../js/bootstrap.bundle.js"></script>
+</body>
+
+</html>
